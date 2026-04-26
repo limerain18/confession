@@ -115,7 +115,6 @@ header {
   position: absolute;
   bottom: 2.5rem;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +124,7 @@ header {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp 1s ease 1.5s forwards;
+  animation: scrollHintIn 1s ease 1.5s forwards;
 }
 
 .scroll-hint::after {
@@ -232,6 +231,7 @@ header {
 
 .gallery-grid .photo:nth-child(5) {
   grid-column: span 2;
+  grid-row: span 2;
 }
 
 .photo {
@@ -504,6 +504,17 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes scrollHintIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
