@@ -46,7 +46,7 @@ async function submitResponse() {
 
   try {
     const { error } = await _supabase
-      .from('responses')
+      .from('response')
       .insert([{ name: name || 'anonymous', message }]);
 
     if (error) throw error;
